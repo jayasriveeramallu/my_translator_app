@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator App</title>
+</head>
+<body>
+    <h1>Translator App</h1>
+    <form action="/translate" method="post">
+        <label for="text">Text to Translate:</label>
+        <input type="textarea" name="text" required>
+        <label for="language">Target Language:</label>
+        <input type="text" name="language" required>
+        <button type="submit">Translate</button>
+    </form>
+    {% if translation %}
+        <h2>Translation:</h2>
+        <p>{{ translation }}</p>
+    {% endif %}
+    {% if error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
